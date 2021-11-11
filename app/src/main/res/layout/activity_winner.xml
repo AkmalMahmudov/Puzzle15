@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:fitsSystemWindows="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/crd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/about_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/t1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/carter_one"
+            android:text="@string/congrats"
+            android:textAlignment="center"
+            android:textColor="#482903"
+            android:textSize="36sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/resulter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/todo"
+        android:padding="48dp"
+        android:src="@drawable/winner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@id/text_time"
+        style="@style/resulter"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/carter_one"
+        android:text="@string/ytime"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/text_step"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/time"
+        app:layout_constraintTop_toTopOf="@id/resulter"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/text_step"
+        style="@style/resulter"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="3dp"
+        android:fontFamily="@font/carter_one"
+        android:text="@string/your_steps"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/resulter"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="@id/text_time"
+        app:layout_constraintRight_toLeftOf="@id/steps"
+        app:layout_constraintStart_toStartOf="@+id/text_time"
+        app:layout_constraintTop_toBottomOf="@id/text_time" />
+
+    <TextView
+        android:id="@+id/time"
+        style="@style/resulter"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:fontFamily="@font/carter_one"
+        android:text=""
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/text_time"
+        app:layout_constraintLeft_toRightOf="@id/text_time"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_time" />
+
+    <TextView
+        android:id="@+id/steps"
+        style="@style/resulter"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="0dp"
+        android:fontFamily="@font/carter_one"
+        android:text=""
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/text_step"
+        app:layout_constraintEnd_toEndOf="@id/time"
+        app:layout_constraintLeft_toRightOf="@id/text_step"
+        app:layout_constraintTop_toTopOf="@id/text_step" />
+
+    <ImageView
+        android:id="@+id/home"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="24dp"
+        android:background="?android:selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:contentDescription="@string/todo"
+        android:focusable="true"
+        android:onClick="clickHome"
+        android:src="@drawable/home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/exit"
+        tools:ignore="UsingOnClickInXml" />
+
+    <ImageView
+        android:id="@+id/exit"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="?android:selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:contentDescription="@string/todo"
+        android:focusable="true"
+        android:onClick="clickExit"
+        android:src="@drawable/exit"
+        app:layout_constraintBottom_toBottomOf="@id/home"
+        app:layout_constraintLeft_toRightOf="@id/home"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="UsingOnClickInXml" />
+</androidx.constraintlayout.widget.ConstraintLayout>
